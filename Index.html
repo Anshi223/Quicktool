@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickTools — Free Online Tools</title>
+<meta name="description" content="Free browser-based image and student tools. Your files stay on your device.">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#f5f7fb;color:#172033}
+  header{background:#111827;color:white;padding:22px 18px}
+  .wrap{max-width:1050px;margin:auto}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:15px}
+  .brand{font-size:24px;font-weight:800}
+  .tag{font-size:13px;opacity:.75}
+  main{padding:28px 18px}
+  .hero{text-align:center;margin:10px auto 28px;max-width:700px}
+  .hero h1{font-size:36px;margin:0 0 8px}
+  .hero p{margin:0;color:#667085}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,.05)}
+  .card h2{font-size:20px;margin:0 0 6px}
+  .card p{font-size:14px;color:#667085}
+  input,select,button{width:100%;padding:11px 12px;border-radius:10px;border:1px solid #d0d5dd;font:inherit}
+  button{border:0;background:#111827;color:white;cursor:pointer;margin-top:8px;font-weight:700}
+  button.secondary{background:#eef2f6;color:#172033}
+  button:hover{opacity:.9}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .output{margin-top:12px;padding:12px;background:#f8fafc;border-radius:10px;min-height:42px;word-break:break-word}
+  .preview{max-width:100%;max-height:230px;display:block;margin:12px auto;border-radius:10px}
+  .hint{font-size:12px;color:#667085;margin-top:8px}
+  footer{text-align:center;padding:28px;color:#667085;font-size:13px}
+  .full{grid-column:1/-1}
+  @media(max-width:600px){.hero h1{font-size:29px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div>
+      <div class="brand">⚡ QuickTools</div>
+      <div class="tag">Small tools. Big convenience.</div>
+    </div>
+    <div class="tag">Free • Browser-based</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Free tools for everyday tasks</h1>
+    <p>Compress, resize and convert images, create QR codes, and calculate common student values.</p>
+  </section>
+
+  <section class="grid">
+
+    <div class="card">
+      <h2>📸 Image Compressor</h2>
+      <p>Reduce image file size directly in your browser.</p>
+      <input id="compressFile" type="file" accept="image/*">
+      <label class="hint">Quality: <span id="qualityValue">70%</span></label>
+      <input id="quality" type="range" min="10" max="100" value="70">
+      <button onclick="compressImage()">Compress & Download</button>
+      <img id="compressPreview" class="preview" hidden>
+      <div id="compressResult" class="output"></div>
+    </div>
+
+    <div class="card">
+      <h2>🔄 Image Converter</h2>
+      <p>Convert an image to JPG, PNG, or WebP.</p>
+      <input id="convertFile" type="file" accept="image/*">
+      <select id="format">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+      <button onclick="convertImage()">Convert & Download</button>
+      <div id="convertResult" class="output"></div>
+    </div>
+
+    <div class="card">
+      <h2>📏 Image Resizer</h2>
+      <p>Resize an image to exact dimensions.</p>
+      <input id="resizeFile" type="file" accept="image/*">
+      <div class="row">
+        <input id="resizeW" type="number" placeholder="Width (px)">
+        <input id="resizeH" type="number" placeholder="Height (px)">
+      </div>
+      <button onclick="resizeImage()">Resize & Download</button>
+      <div id="resizeResult" class="output"></div>
+    </div>
+
+    <div class="card">
+      <h2>🖨️ Image → PDF</h2>
+      <p>Create a printable PDF using your browser's Print dialog.</p>
+      <input id="pdfFile" type="file" accept="image/*">
+      <button onclick="imageToPdf()">Open PDF Print View</button>
+      <div class="hint">Choose “Save as PDF” in the print dialog.</div>
+    </div>
+
+    <div class="card">
+      <h2>🔗 QR Code Generator</h2>
+      <p>Create a QR code for a URL or text.</p>
+      <input id="qrText" placeholder="https://example.com or any text">
+      <button onclick="makeQR()">Generate QR</button>
+      <div id="qrBox" class="output" style="text-align:center"></div>
+      <button class="secondary" onclick="downloadQR()">Download QR</button>
+      <div class="hint">QR rendering uses a free external QR service; no personal data is intentionally sent except the text you enter.</div>
+    </div>
+
+    <div class="card">
+      <h2>📝 Percentage Calculator</h2>
+      <p>Calculate X% of Y.</p>
+      <div class="row">
+        <input id="pct" type="number" placeholder="Percentage">
+        <input id="num" type="number" placeholder="Number">
+      </div>
+      <button onclick="percentage()">Calculate</button>
+      <div id="pctOut" class="output"></div>
+    </div>
+
+    <div class="card">
+      <h2>🎓 CGPA → Percentage</h2>
+      <p>Common CBSE-style conversion: CGPA × 9.5.</p>
+      <input id="cgpa" type="number" step="0.01" min="0" max="10" placeholder="Enter CGPA">
+      <button onclick="cgpaCalc()">Calculate</button>
+      <div id="cgpaOut" class="output"></div>
+    </div>
+
+    <div class="card">
+      <h2>🎂 Age Calculator</h2>
+      <p>Calculate age from date of birth.</p>
+      <input id="dob" type="date">
+      <button onclick="ageCalc()">Calculate Age</button>
+      <div id="ageOut" class="output"></div>
+    </div>
+
+    <div class="card full">
+      <h2>📱 Social Media Image Resizer</h2>
+      <p>Quick presets for common social-media graphics.</p>
+      <input id="socialFile" type="file" accept="image/*">
+      <select id="socialSize">
+        <option value="1080,1080">Square — 1080 × 1080</option>
+        <option value="1080,1920">Story/Reel — 1080 × 1920</option>
+        <option value="1200,675">Landscape — 1200 × 675</option>
+        <option value="1080,1350">Portrait — 1080 × 1350</option>
+      </select>
+      <button onclick="socialResize()">Resize & Download</button>
+      <div id="socialResult" class="output"></div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  © 2026 QuickTools • Files for image tools are processed locally in your browser.
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+$('quality').addEventListener('input', e => $('qualityValue').textContent = e.target.value + '%');
+
+function loadImage(file){
+  return new Promise((resolve,reject)=>{
+    if(!file) return reject(new Error("Please select an image."));
+    const url=URL.createObjectURL(file);
+    const img=new Image();
+    img.onload=()=>{URL.revokeObjectURL(url);resolve(img)};
+    img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error("Could not read image."))};
+    img.src=url;
+  });
+}
+
+function canvasBlob(img,w,h,type,quality){
+  const c=document.createElement('canvas'); c.width=w;c.height=h;
+  const ctx=c.getContext('2d');
+  if(type==='image/jpeg') {ctx.fillStyle='white';ctx.fillRect(0,0,w,h);}
+  ctx.drawImage(img,0,0,w,h);
+  return new Promise(resolve=>c.toBlob(resolve,type,quality));
+}
+
+function downloadBlob(blob,name){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download=name;
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+async function compressImage(){
+  try{
+    const f=$('compressFile').files[0];
+    const img=await loadImage(f);
+    const q=+$('quality').value/100;
+    const blob=await canvasBlob(img,img.naturalWidth,img.naturalHeight,'image/jpeg',q);
+    $('compressPreview').src=URL.createObjectURL(blob);
+    $('compressPreview').hidden=false;
+    $('compressResult').textContent=`Original: ${(f.size/1024).toFixed(1)} KB → New: ${(blob.size/1024).toFixed(1)} KB`;
+    downloadBlob(blob,'quicktools-compressed.jpg');
+  }catch(e){$('compressResult').textContent=e.message}
+}
+
+async function convertImage(){
+  try{
+    const f=$('convertFile').files[0], type=$('format').value;
+    const img=await loadImage(f);
+    const ext={ 'image/jpeg':'jpg','image/png':'png','image/webp':'webp'}[type];
+    const blob=await canvasBlob(img,img.naturalWidth,img.naturalHeight,type,type==='image/jpeg'?0.92:undefined);
+    downloadBlob(blob,`quicktools-converted.${ext}`);
+    $('convertResult').textContent=`Done — ${(blob.size/1024).toFixed(1)} KB`;
+  }catch(e){$('convertResult').textContent=e.message}
+}
+
+async function resizeImage(){
+  try{
+    const f=$('resizeFile').files[0],w=+$('resizeW').value,h=+$('resizeH').value;
+    if(!w||!h) throw new Error("Enter width and height.");
+    const img=await loadImage(f);
+    const blob=await canvasBlob(img,w,h,'image/png');
+    downloadBlob(blob,'quicktools-resized.png');
+    $('resizeResult').textContent=`Done — ${w} × ${h}px`;
+  }catch(e){$('resizeResult').textContent=e.message}
+}
+
+function imageToPdf(){
+  const f=$('pdfFile').files[0];
+  if(!f){alert('Please select an image.');return}
+  const url=URL.createObjectURL(f);
+  const win=window.open('','_blank');
+  if(!win){alert('Please allow pop-ups for this site.');return}
+  win.document.write(`<html><head><title>QuickTools PDF</title><style>
+    @page{margin:0}html,body{margin:0;height:100%;text-align:center}
+    img{max-width:100%;max-height:100vh;object-fit:contain}
+  </style></head><body><img src="${url}" onload="setTimeout(()=>print(),300)"></body></html>`);
+  win.document.close();
+}
+
+function makeQR(){
+  const text=$('qrText').value.trim();
+  if(!text){$('qrBox').textContent='Enter text or a URL.';return}
+  const img=document.createElement('img');
+  img.id='qrImage'; img.alt='Generated QR code';
+  img.width=220;img.height=220;
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(text);
+  $('qrBox').innerHTML='';$('qrBox').appendChild(img);
+}
+function downloadQR(){
+  const img=$('qrImage');
+  if(!img){alert('Generate a QR code first.');return}
+  const a=document.createElement('a');a.href=img.src;a.download='quicktools-qr.png';a.target='_blank';
+  a.click();
+}
+
+function percentage(){
+  const p=+$('pct').value,n=+$('num').value;
+  $('pctOut').textContent=Number.isFinite(p)&&Number.isFinite(n)?`${p}% of ${n} = ${(p*n/100).toFixed(2)}`:'Enter valid numbers.';
+}
+function cgpaCalc(){
+  const c=+$('cgpa').value;
+  $('cgpaOut').textContent=(c>=0&&c<=10)?`Approx. percentage = ${(c*9.5).toFixed(2)}%`:'Enter a CGPA from 0 to 10.';
+}
+function ageCalc(){
+  const s=$('dob').value;
+  if(!s){$('ageOut').textContent='Select your date of birth.';return}
+  const dob=new Date(s+'T00:00:00'),now=new Date();
+  if(dob>now){$('ageOut').textContent='Date of birth cannot be in the future.';return}
+  let y=now.getFullYear()-dob.getFullYear(),m=now.getMonth()-dob.getMonth(),d=now.getDate()-dob.getDate();
+  if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}
+  if(m<0){y--;m+=12}
+  $('ageOut').textContent=`Age: ${y} years, ${m} months, ${d} days`;
+}
+
+async function socialResize(){
+  try{
+    const f=$('socialFile').files[0], [w,h]=$('socialSize').value.split(',').map(Number);
+    const img=await loadImage(f);
+    const c=document.createElement('canvas');c.width=w;c.height=h;
+    const ctx=c.getContext('2d');
+    const scale=Math.max(w/img.naturalWidth,h/img.naturalHeight);
+    const nw=img.naturalWidth*scale,nh=img.naturalHeight*scale;
+    ctx.drawImage(img,(w-nw)/2,(h-nh)/2,nw,nh);
+    const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',0.92));
+    downloadBlob(blob,`quicktools-${w}x${h}.jpg`);
+    $('socialResult').textContent=`Done — ${w} × ${h}px`;
+  }catch(e){$('socialResult').textContent=e.message}
+}
+</script>
+</body>
+</html>
