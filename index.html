@@ -297,6 +297,7 @@ nav small{display:none}
   }
 }
  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -372,6 +373,21 @@ make PDFs and calculate common student values — right in your browser.
 </div>
 <div class="card tool" data-key="image compressor compress">
 <div class="icon">🗜️</div>
+  <div class="card tool" data-key="multiple images jpg png pdf image to pdf">
+  <div class="icon">📚</div>
+  <h3>Images → PDF</h3>
+  <p>Combine multiple images into one PDF.</p>
+
+  <input id="multiPdfFiles" type="file" accept="image/*" multiple>
+
+  <span class="hint">
+    Select multiple JPG, PNG or WebP images.
+  </span>
+
+  <button onclick="imagesToPdf()">Create PDF</button>
+
+  <div id="multiPdfResult" class="output"></div>
+  </div>
 <h3>Image Compressor</h3>
 <p>Reduce image file size in your browser.</p>
 <input id="cf" type="file" accept="image/*">
@@ -888,6 +904,72 @@ async function cropImage(){
   }catch(e){
 
     $("cropResult").textContent = e.message;
+
+  }
+
+  }
+  async function imagesToPdf(){
+
+  try{
+
+    const files = Array.from(
+      $("multiPdfFiles").files
+    );
+
+    if(!files.length)
+      throw Error("Please select at least one image.");
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4"
+    });
+
+    for(let index = 0; index < files.length; index++){
+
+      const file = files[index];
+      const image = await img(file);
+
+      if(index > 0){
+        pdf.addPage();
+      }
+
+      const pageW = 210;
+      const pageH = 297;
+      const margin = 10;
+
+      const maxW = pageW - margin * 2;
+      const maxH = pageH - margin * 2;
+
+      const scale = Math.min(
+        maxW / image.naturalWidth,
+        maxH / image.naturalHeight
+      );
+
+      const w = image.naturalWidth * scale;
+      const h = image.naturalHeight * scale;
+
+      pdf.addImage(
+        image,
+        "JPEG",
+        (pageW - w) / 2,
+        (pageH - h) / 2,
+        w,
+        h
+      );
+    }
+
+    pdf.save("toolora-images.pdf");
+
+    $("multiPdfResult").textContent =
+      `${files.length} image(s) added — PDF created successfully.`;
+
+  }catch(e){
+
+    $("multiPdfResult").textContent =
+      e.message;
 
   }
 
