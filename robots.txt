@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anshi223.github.io/Quicktool/sitemap.xml
