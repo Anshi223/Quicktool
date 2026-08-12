@@ -371,31 +371,70 @@ make PDFs and calculate common student values — right in your browser.
 
   <div id="counterResult" class="output"></div>
 </div>
-<div class="card tool" data-key="image compressor compress">
-<div class="icon">🗜️</div>
-  <div class="card tool" data-key="multiple images jpg png pdf image to pdf">
+<!-- IMAGE COMPRESSOR -->
+<div class="card tool" data-key="image compressor compress jpg png photo">
+
+  <div class="icon">🗜️</div>
+
+  <h3>Image Compressor</h3>
+
+  <p>Reduce image file size directly in your browser.</p>
+
+  <input id="cf" type="file" accept="image/jpeg,image/png,image/webp">
+
+  <span class="hint">
+    Choose an image and adjust the quality.
+  </span>
+
+  <span class="hint">
+    Quality: <b id="qv">70%</b>
+  </span>
+
+  <input
+    id="q"
+    type="range"
+    min="10"
+    max="100"
+    value="70"
+  >
+
+  <button type="button" onclick="compress()">
+    Compress & Download
+  </button>
+
+  <img id="cp" class="preview" hidden>
+
+  <div id="cr" class="output"></div>
+
+</div>
+
+
+<!-- MULTIPLE IMAGES TO PDF -->
+<div class="card tool" data-key="multiple images jpg png pdf image to pdf">
+
   <div class="icon">📚</div>
+
   <h3>Images → PDF</h3>
+
   <p>Combine multiple images into one PDF.</p>
 
-  <input id="multiPdfFiles" type="file" accept="image/*" multiple>
+  <input
+    id="multiPdfFiles"
+    type="file"
+    accept="image/jpeg,image/png,image/webp"
+    multiple
+  >
 
   <span class="hint">
     Select multiple JPG, PNG or WebP images.
   </span>
 
-  <button onclick="imagesToPdf()">Create PDF</button>
+  <button type="button" onclick="imagesToPdf()">
+    Create PDF
+  </button>
 
   <div id="multiPdfResult" class="output"></div>
-  </div>
-<h3>Image Compressor</h3>
-<p>Reduce image file size in your browser.</p>
-<input id="cf" type="file" accept="image/*">
-<span class="hint">Quality: <span id="qv">70%</span></span>
-<input id="q" type="range" min="10" max="100" value="70">
-<button onclick="compress()">Compress & Download</button>
-<img id="cp" class="preview" hidden>
-<div id="cr" class="output"></div>
+
 </div>
 
 <div class="card tool" data-key="image converter jpg png webp">
