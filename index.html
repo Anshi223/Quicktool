@@ -338,7 +338,38 @@ make PDFs and calculate common student values — right in your browser.
 </div>
 
 <section class="grid" id="grid">
+  
+<div class="card tool" data-key="image cropper crop photo">
+  <div class="icon">✂️</div>
+  <h3>Image Cropper</h3>
+  <p>Crop an image to your chosen width and height.</p>
 
+  <input id="cropFile" type="file" accept="image/*">
+
+  <div class="row">
+    <input id="cropW" type="number" placeholder="Width (px)">
+    <input id="cropH" type="number" placeholder="Height (px)">
+  </div>
+
+  <button onclick="cropImage()">Crop & Download</button>
+
+  <div id="cropResult" class="output"></div>
+</div>
+
+
+<div class="card tool" data-key="word counter character counter text words">
+  <div class="icon">📝</div>
+  <h3>Word & Character Counter</h3>
+  <p>Count words, characters and sentences instantly.</p>
+
+  <textarea id="counterText"
+    placeholder="Type or paste your text here..."
+    style="width:100%;min-height:140px;padding:12px;border:1px solid #d9dce7;border-radius:11px;font:inherit;resize:vertical"></textarea>
+
+  <button onclick="countText()">Count Text</button>
+
+  <div id="counterResult" class="output"></div>
+</div>
 <div class="card tool" data-key="image compressor compress">
 <div class="icon">🗜️</div>
 <h3>Image Compressor</h3>
@@ -782,7 +813,85 @@ $("so").textContent=e.message
 }
 
 }
+function countText(){
 
+  const text = $("counterText").value;
+
+  const words = text.trim()
+    ? text.trim().split(/\s+/).length
+    : 0;
+
+  const characters = text.length;
+
+  const charactersNoSpaces =
+    text.replace(/\s/g,"").length;
+
+  const sentences = text.trim()
+    ? text.split(/[.!?]+/)
+        .filter(x => x.trim()).length
+    : 0;
+
+  $("counterResult").innerHTML =
+    `Words: <b>${words}</b><br>
+     Characters: <b>${characters}</b><br>
+     Characters without spaces: <b>${charactersNoSpaces}</b><br>
+     Sentences: <b>${sentences}</b>`;
+}
+
+
+async function cropImage(){
+
+  try{
+
+    const f = $("cropFile").files[0];
+
+    const w = +$("cropW").value;
+    const h = +$("cropH").value;
+
+    if(!w || !h)
+      throw Error("Enter crop width and height.");
+
+    const i = await img(f);
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = w;
+    canvas.height = h;
+
+    const ctx = canvas.getContext("2d");
+
+    const scale = Math.max(
+      w / i.naturalWidth,
+      h / i.naturalHeight
+    );
+
+    const nw = i.naturalWidth * scale;
+    const nh = i.naturalHeight * scale;
+
+    ctx.drawImage(
+      i,
+      (w - nw) / 2,
+      (h - nh) / 2,
+      nw,
+      nh
+    );
+
+    const b = await new Promise(resolve =>
+      canvas.toBlob(resolve,"image/jpeg",0.92)
+    );
+
+    dl(b,`toolora-cropped-${w}x${h}.jpg`);
+
+    $("cropResult").textContent =
+      `Done — ${w} × ${h}px`;
+
+  }catch(e){
+
+    $("cropResult").textContent = e.message;
+
+  }
+
+  }
 </script>
 
 </body>
