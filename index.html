@@ -912,12 +912,15 @@ async function cropImage(){
 
   try{
 
-    const files = Array.from(
-      $("multiPdfFiles").files
-    );
+    const files = Array.from($("multiPdfFiles").files);
 
-    if(!files.length)
+    if(!files.length){
       throw Error("Please select at least one image.");
+    }
+
+    if(!window.jspdf){
+      throw Error("PDF library is still loading. Please refresh the page and try again.");
+    }
 
     const { jsPDF } = window.jspdf;
 
@@ -951,11 +954,20 @@ async function cropImage(){
       const w = image.naturalWidth * scale;
       const h = image.naturalHeight * scale;
 
+      const canvas = document.createElement("canvas");
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(image,0,0);
+
+      const imageData = canvas.toDataURL("image/jpeg",0.92);
+
       pdf.addImage(
-        image,
+        imageData,
         "JPEG",
-        (pageW - w) / 2,
-        (pageH - h) / 2,
+        (pageW-w)/2,
+        (pageH-h)/2,
         w,
         h
       );
@@ -969,7 +981,7 @@ async function cropImage(){
   }catch(e){
 
     $("multiPdfResult").textContent =
-      e.message;
+      "Error: " + e.message;
 
   }
 
