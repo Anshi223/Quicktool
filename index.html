@@ -647,6 +647,34 @@ URL.revokeObjectURL(a.href)
 },1000)
 }
 
+
+
+      
+      "
+        quality
+      );
+
+    if(blob.size <= targetBytes){
+
+      bestBlob = blob;
+      low = quality;
+
+    }else{
+
+      high = quality;
+
+    }
+
+  }
+
+  if(bestBlob){
+    return bestBlob;
+  }
+
+  return await makeCompressedBlob(
+    image,
+    0.05
+  );
 function setupCompressor(){
 
   $("compressMode").onchange = function(){
@@ -660,8 +688,9 @@ function setupCompressor(){
       mode === "size" ? "block" : "none";
 
     $("cr").textContent = "";
-
   };
+
+}
 
 
 async function compress(){
@@ -683,65 +712,61 @@ async function compress(){
 
     const mode = $("compressMode").value;
 
-    let blob;
+    let compressedBlob;
 
     if(mode === "quality"){
 
       const quality =
         Number($("q").value) / 100;
 
-      blob = await makeCompressedBlob(
-        image,
-        quality
-      );
+      compressedBlob =
+        await makeCompressedBlob(
+          image,
+          quality
+        );
 
     }else{
 
-      let target =
+      const target =
         Number($("targetSize").value);
 
       if(!target || target <= 0){
-        throw new Error(
-          "Enter a valid target size."
-        );
+        throw new Error("Enter a valid target size.");
       }
 
       const unit = $("sizeUnit").value;
 
-      let targetBytes =
+      const targetBytes =
         unit === "MB"
-        ? target * 1024 * 1024
-        : target * 1024;
+          ? target * 1024 * 1024
+          : target * 1024;
 
-      blob =
+      compressedBlob =
         await compressToTargetSize(
           image,
           targetBytes
         );
-
     }
 
-    if(!blob){
+    if(!compressedBlob){
       throw new Error("Compression failed.");
     }
 
     const previewUrl =
-      URL.createObjectURL(blob);
+      URL.createObjectURL(compressedBlob);
 
     preview.src = previewUrl;
     preview.hidden = false;
 
     const originalBytes = file.size;
-    const newBytes = blob.size;
+    const newBytes = compressedBlob.size;
 
     const savedPercent =
-      originalBytes > 0
-      ? ((originalBytes - newBytes) /
-         originalBytes) * 100
-      : 0;
+      ((originalBytes - newBytes) /
+      originalBytes) * 100;
 
     let resultHTML = `
-      <b>Compression complete!</b><br><br>
+      <b>Compression complete! ✅</b><br><br>
       Original: ${formatFileSize(originalBytes)}<br>
       Compressed: ${formatFileSize(newBytes)}<br>
       Saved: ${Math.max(0,savedPercent).toFixed(1)}%
@@ -761,21 +786,19 @@ async function compress(){
         <br>
         Quality: ${$("q").value}%
       `;
-
     }
 
     result.innerHTML = resultHTML;
 
     dl(
-      blob,
+      compressedBlob,
       "toolora-compressed.jpg"
     );
 
   }catch(error){
 
     result.textContent =
-      error.message ||
-      "Something went wrong.";
+      error.message || "Something went wrong.";
 
   }
 
@@ -850,15 +873,15 @@ async function compressToTargetSize(
     const quality =
       (low + high) / 2;
 
-    const blob =
+    const testBlob =
       await makeCompressedBlob(
         image,
         quality
       );
 
-    if(blob.size <= targetBytes){
+    if(testBlob.size <= targetBytes){
 
-      bestBlob = blob;
+      bestBlob = testBlob;
       low = quality;
 
     }else{
@@ -866,7 +889,6 @@ async function compressToTargetSize(
       high = quality;
 
     }
-
   }
 
   if(bestBlob){
@@ -877,14 +899,15 @@ async function compressToTargetSize(
     image,
     0.05
   );
-
 }
 
 
 function formatFileSize(bytes){
 
   if(bytes < 1024){
+
     return bytes.toFixed(0) + " B";
+
   }
 
   if(bytes < 1024 * 1024){
@@ -898,12 +921,11 @@ function formatFileSize(bytes){
   return (
     bytes / (1024 * 1024)
   ).toFixed(2) + " MB";
-
 }
 
 
 setupCompressor();
-
+  
 async function convert(){
 
 try{
