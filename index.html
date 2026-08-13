@@ -1,44 +1,57 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="google-site-verification" content="1uMb9617P8EV80Mq9rp7fZZPiYTVSHoUYCzGWbyjCMw" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="google-site-verification"
+content="1uMb9617P8EV80Mq9rp7fZZPiYTVSHoUYCzGWbyjCMw">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
 <title>Toolora — Free Online Tools | Image, PDF & Student Tools</title>
 
-<meta name="description" content="Toolora provides free online tools for image compression, image conversion, resizing, PDF creation, QR codes, percentage, CGPA and age calculations. Fast, simple and browser-based.">
+<meta name="description"
+content="Toolora provides free online tools for image compression, image conversion, resizing, PDF creation, QR codes, percentage, CGPA and age calculations. Fast, simple and browser-based.">
 
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://anshi223.github.io/Quicktool/">
+<link rel="canonical"
+href="https://anshi223.github.io/Quicktool/">
 
 <meta name="theme-color" content="#6d5dfc">
 
-<meta property="og:title" content="Toolora — Free Online Tools">
+<meta property="og:title"
+content="Toolora — Free Online Tools">
 
-<meta property="og:description" content="Free browser-based tools for images, PDFs, QR codes, students and everyday tasks.">
+<meta property="og:description"
+content="Free browser-based tools for images, PDFs, QR codes, students and everyday tasks.">
 
-<meta property="og:url" content="https://anshi223.github.io/Quicktool/">
+<meta property="og:url"
+content="https://anshi223.github.io/Quicktool/">
 
 <meta property="og:type" content="website">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="Toolora — Free Online Tools">
+<meta name="twitter:title"
+content="Toolora — Free Online Tools">
 
-<meta name="twitter:description" content="Free online tools for images, PDFs, QR codes and students.">
-<link rel="canonical" href="https://anshi223.github.io/Quicktool/">
+<meta name="twitter:description"
+content="Free online tools for images, PDFs, QR codes and students.">
 
-<meta name="robots" content="index, follow">
+<meta name="keywords"
+content="free online tools, image compressor, image resizer, image converter, JPG converter, PNG converter, WebP converter, QR code generator, image to PDF, percentage calculator, CGPA calculator, age calculator, social media image resizer, Toolora">
 
-<meta name="keywords" content="free online tools, image compressor, image resizer, image converter, JPG converter, PNG converter, WebP converter, QR code generator, image to PDF, percentage calculator, CGPA calculator, age calculator, social media image resizer, Toolora">
 
-<meta property="og:title" content="Toolora — Free Online Tools">
-<meta property="og:description" content="Free online tools for image compression, conversion, resizing, QR codes, PDFs and student calculations.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://anshi223.github.io/Quicktool/">
+<!-- PDF LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
 <style>
+
 :root{
 --bg:#f7f8fc;
 --card:#fff;
@@ -46,18 +59,22 @@
 --muted:#687087;
 --p:#6d5dfc;
 --p2:#8b7cff;
---border:#e6e8f0
+--border:#e6e8f0;
 }
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 background:var(--bg);
-color:var(--text)
+color:var(--text);
 }
 
 header{
@@ -66,19 +83,19 @@ top:0;
 z-index:10;
 background:#ffffffee;
 backdrop-filter:blur(14px);
-border-bottom:1px solid var(--border)
+border-bottom:1px solid var(--border);
 }
 
 nav,main{
 max-width:1120px;
-margin:auto
+margin:auto;
 }
 
 nav{
 padding:14px 18px;
 display:flex;
 justify-content:space-between;
-align-items:center
+align-items:center;
 }
 
 .brand{
@@ -86,7 +103,7 @@ display:flex;
 align-items:center;
 gap:10px;
 font-size:22px;
-font-weight:900
+font-weight:900;
 }
 
 .logo{
@@ -96,20 +113,29 @@ border-radius:12px;
 display:grid;
 place-items:center;
 background:linear-gradient(135deg,var(--p),var(--p2));
-color:#fff
+color:#fff;
 }
 
-nav small{color:var(--muted)}
+nav small{
+color:var(--muted);
+}
 
-main{padding:32px 18px}
+main{
+padding:32px 18px;
+}
 
 .hero{
 text-align:center;
 padding:45px 18px 36px;
 border:1px solid var(--border);
 border-radius:28px;
-background:linear-gradient(135deg,#f0edff,#fff 55%,#eef8ff);
-box-shadow:0 12px 35px #1e23460d
+background:linear-gradient(
+135deg,
+#f0edff,
+#fff 55%,
+#eef8ff
+);
+box-shadow:0 12px 35px #1e23460d;
 }
 
 .badge{
@@ -120,28 +146,30 @@ background:#fff;
 border:1px solid var(--border);
 font-size:13px;
 font-weight:700;
-color:#5a4dd2
+color:#5a4dd2;
 }
 
 h1{
 font-size:clamp(35px,7vw,58px);
 line-height:1.02;
 letter-spacing:-1.8px;
-margin:16px 0 12px
+margin:16px 0 12px;
 }
 
-h1 span{color:var(--p)}
+h1 span{
+color:var(--p);
+}
 
 .hero p{
 max-width:680px;
 margin:auto;
 color:var(--muted);
-line-height:1.6
+line-height:1.6;
 }
 
 .search{
 max-width:620px;
-margin:24px auto 0
+margin:24px auto 0;
 }
 
 .search input{
@@ -150,28 +178,30 @@ padding:15px 18px;
 border:1px solid var(--border);
 border-radius:15px;
 outline:0;
-box-shadow:0 8px 22px #1e23460f
+box-shadow:0 8px 22px #1e23460f;
 }
 
 .section{
 display:flex;
 justify-content:space-between;
 align-items:end;
-margin:30px 2px 14px
+margin:30px 2px 14px;
 }
 
-.section h2{margin:0}
+.section h2{
+margin:0;
+}
 
 .section p{
 margin:4px 0 0;
 color:var(--muted);
-font-size:13px
+font-size:13px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:17px
+gap:17px;
 }
 
 .card{
@@ -179,34 +209,36 @@ background:var(--card);
 border:1px solid var(--border);
 border-radius:20px;
 padding:20px;
-box-shadow:0 7px 25px #1e23460d
+box-shadow:0 7px 25px #1e23460d;
 }
 
-.card h3{margin:0 0 6px}
+.card h3{
+margin:0 0 6px;
+}
 
 .card p{
 margin:0 0 14px;
 color:var(--muted);
 font-size:13px;
-line-height:1.5
+line-height:1.5;
 }
 
 .icon{
 font-size:28px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
 input,select,button{
 width:100%;
 padding:11px 12px;
 border-radius:11px;
-font:inherit
+font:inherit;
 }
 
 input,select{
 border:1px solid #d9dce7;
 background:#fff;
-margin-bottom:9px
+margin-bottom:9px;
 }
 
 button{
@@ -214,19 +246,23 @@ border:0;
 background:linear-gradient(135deg,var(--p),var(--p2));
 color:#fff;
 font-weight:800;
-cursor:pointer
+cursor:pointer;
+}
+
+button:hover{
+opacity:.92;
 }
 
 button.secondary{
 background:#f0efff;
 color:#5145c9;
-margin-top:8px
+margin-top:8px;
 }
 
 .row{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:9px
+gap:9px;
 }
 
 .output{
@@ -237,7 +273,7 @@ background:#f8f9fd;
 color:#41475a;
 min-height:40px;
 font-size:13px;
-word-break:break-word
+word-break:break-word;
 }
 
 .preview{
@@ -245,23 +281,25 @@ max-width:100%;
 max-height:210px;
 display:block;
 margin:12px auto;
-border-radius:12px
+border-radius:12px;
 }
 
 .hint{
 display:block;
 color:var(--muted);
 font-size:12px;
-margin:4px 0 8px
+margin:4px 0 8px;
 }
 
-.full{grid-column:1/-1}
+.full{
+grid-column:1/-1;
+}
 
 .empty{
 text-align:center;
 padding:28px;
 color:var(--muted);
-display:none
+display:none;
 }
 
 footer{
@@ -269,1053 +307,2217 @@ text-align:center;
 border-top:1px solid var(--border);
 padding:30px 18px;
 color:var(--muted);
-font-size:13px
+font-size:13px;
 }
 
 .footer-brand{
 font-weight:800;
-color:var(--text)
+color:var(--text);
+}
+
+textarea{
+width:100%;
+min-height:140px;
+padding:12px;
+border:1px solid #d9dce7;
+border-radius:11px;
+font:inherit;
+resize:vertical;
 }
 
 @media(max-width:600px){
-nav small{display:none}
-.hero{padding:35px 14px 28px}
-.row{grid-template-columns:1fr}
+
+nav small{
+display:none;
 }
+
+.hero{
+padding:35px 14px 28px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
+
+
 <script type="application/ld+json">
+
 {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Toolora",
-  "url": "https://anshi223.github.io/Quicktool/",
-  "description": "Free online tools for images, PDFs, QR codes, students and everyday tasks.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://anshi223.github.io/Quicktool/?search={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+"@context":"https://schema.org",
+"@type":"WebSite",
+"name":"Toolora",
+"url":"https://anshi223.github.io/Quicktool/",
+"description":"Free online tools for images, PDFs, QR codes, students and everyday tasks."
 }
- </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</script>
+
 </head>
+
 
 <body>
 
+
 <header>
+
 <nav>
+
 <div class="brand">
+
 <div class="logo">✦</div>
+
 Toolora
+
 </div>
-<small>Free • Simple • Browser-based</small>
+
+<small>
+Free • Simple • Browser-based
+</small>
+
 </nav>
+
 </header>
+
 
 <main>
 
+
 <section class="hero">
 
-<div class="badge">✨ Free tools for everyday life</div>
+<div class="badge">
+✨ Free tools for everyday life
+</div>
 
-<h1>Do more with <span>Toolora.</span></h1>
+<h1>
+Do more with <span>Toolora.</span>
+</h1>
 
 <p>
 Compress, resize and convert images, create QR codes,
-make PDFs and calculate common student values — right in your browser.
+make PDFs and calculate common student values —
+right in your browser.
 </p>
 
 <div class="search">
-<input id="search" type="search" placeholder="Search tools...">
+
+<input
+id="search"
+type="search"
+placeholder="Search tools..."
+>
+
 </div>
 
 </section>
 
+
 <div class="section">
+
 <div>
+
 <h2>Popular tools</h2>
-<p>Everything is designed to be quick and easy.</p>
+
+<p>
+Everything is designed to be quick and easy.
+</p>
+
 </div>
+
 </div>
+
 
 <section class="grid" id="grid">
-  
-<div class="card tool" data-key="image cropper crop photo">
-  <div class="icon">✂️</div>
-  <h3>Image Cropper</h3>
-  <p>Crop an image to your chosen width and height.</p>
 
-  <input id="cropFile" type="file" accept="image/*">
 
-  <div class="row">
-    <input id="cropW" type="number" placeholder="Width (px)">
-    <input id="cropH" type="number" placeholder="Height (px)">
-  </div>
+<!-- IMAGE CROPPER -->
 
-  <button onclick="cropImage()">Crop & Download</button>
+<div class="card tool"
+data-key="image cropper crop photo">
 
-  <div id="cropResult" class="output"></div>
+<div class="icon">✂️</div>
+
+<h3>Image Cropper</h3>
+
+<p>
+Crop an image to your chosen width and height.
+</p>
+
+<input
+id="cropFile"
+type="file"
+accept="image/*"
+>
+
+<div class="row">
+
+<input
+id="cropW"
+type="number"
+placeholder="Width (px)"
+>
+
+<input
+id="cropH"
+type="number"
+placeholder="Height (px)"
+>
+
+</div>
+
+<button onclick="cropImage()">
+Crop & Download
+</button>
+
+<div
+id="cropResult"
+class="output">
+</div>
+
 </div>
 
 
-<div class="card tool" data-key="word counter character counter text words">
-  <div class="icon">📝</div>
-  <h3>Word & Character Counter</h3>
-  <p>Count words, characters and sentences instantly.</p>
+<!-- WORD COUNTER -->
 
-  <textarea id="counterText"
-    placeholder="Type or paste your text here..."
-    style="width:100%;min-height:140px;padding:12px;border:1px solid #d9dce7;border-radius:11px;font:inherit;resize:vertical"></textarea>
+<div class="card tool"
+data-key="word counter character counter text words">
 
-  <button onclick="countText()">Count Text</button>
+<div class="icon">📝</div>
 
-  <div id="counterResult" class="output"></div>
-  
+<h3>
+Word & Character Counter
+</h3>
+
+<p>
+Count words, characters and sentences instantly.
+</p>
+
+<textarea
+id="counterText"
+placeholder="Type or paste your text here..."
+></textarea>
+
+<button onclick="countText()">
+Count Text
+</button>
+
+<div
+id="counterResult"
+class="output">
 </div>
-  <div class="card tool" data-key="image compressor compress image size kb mb quality">
 
-  <div class="icon">🗜️</div>
+</div>
 
-  <h3>Image Compressor</h3>
 
-  <p>Compress images by choosing quality or a target file size.</p>
+<!-- IMAGE COMPRESSOR -->
 
-  <input
-    id="cf"
-    type="file"
-    accept="image/jpeg,image/png,image/webp"
-  >
+<div class="card tool"
+data-key="image compressor compress image size kb mb quality">
 
-  <div class="hint">
-    Choose how you want to compress:
-  </div>
+<div class="icon">🗜️</div>
 
-  <select id="compressMode">
-    <option value="quality">Quality Mode</option>
-    <option value="size">Target Size Mode</option>
-  </select>
+<h3>Image Compressor</h3>
 
-  <div id="qualityBox">
+<p>
+Compress images by choosing quality or a target file size.
+</p>
 
-    <span class="hint">
-      Quality: <b id="qv">70%</b>
-    </span>
+<input
+id="cf"
+type="file"
+accept="image/jpeg,image/png,image/webp"
+>
 
-    <input
-      id="q"
-      type="range"
-      min="10"
-      max="100"
-      value="70"
-    >
+<span class="hint">
+Choose how you want to compress:
+</span>
 
-  </div>
+<select id="compressMode">
 
-  <div id="sizeBox" style="display:none">
+<option value="quality">
+Quality Mode
+</option>
 
-    <div class="row">
+<option value="size">
+Target Size Mode
+</option>
 
-      <input
-        id="targetSize"
-        type="number"
-        min="1"
-        step="1"
-        placeholder="Target size"
-      >
+</select>
 
-      <select id="sizeUnit">
-        <option value="KB">KB</option>
-        <option value="MB">MB</option>
-      </select>
 
-    </div>
+<!-- QUALITY -->
 
-    <span class="hint">
-      Example: 500 KB or 1 MB
-    </span>
+<div id="qualityBox">
 
-  </div>
+<span class="hint">
+Quality: <b id="qv">70%</b>
+</span>
 
-  <button type="button" onclick="compress()">
-    Compress & Download
-  </button>
+<input
+id="q"
+type="range"
+min="10"
+max="100"
+value="70"
+>
 
-  <img id="cp" class="preview" hidden>
+</div>
 
-  <div id="cr" class="output"></div>
 
-  </div>
+<!-- TARGET SIZE -->
+
+<div
+id="sizeBox"
+style="display:none"
+>
+
+<div class="row">
+
+<input
+id="targetSize"
+type="number"
+min="1"
+step="1"
+placeholder="Target size"
+>
+
+<select id="sizeUnit">
+
+<option value="KB">
+KB
+</option>
+
+<option value="MB">
+MB
+</option>
+
+</select>
+
+</div>
+
+<span class="hint">
+Example: 500 KB or 1 MB
+</span>
+
+</div>
+
+
+<button
+type="button"
+onclick="compress()"
+>
+
+Compress & Download
+
+</button>
+
+
+<img
+id="cp"
+class="preview"
+hidden
+>
+
+<div
+id="cr"
+class="output">
+</div>
+
+</div>
 
 
 <!-- MULTIPLE IMAGES TO PDF -->
-<div class="card tool" data-key="multiple images jpg png pdf image to pdf">
 
-  <div class="icon">📚</div>
+<div class="card tool"
+data-key="multiple images jpg png pdf image to pdf">
 
-  <h3>Images → PDF</h3>
+<div class="icon">📚</div>
 
-  <p>Combine multiple images into one PDF.</p>
+<h3>
+Images → PDF
+</h3>
 
-  <input
-    id="multiPdfFiles"
-    type="file"
-    accept="image/jpeg,image/png,image/webp"
-    multiple
-  >
+<p>
+Combine multiple images into one PDF.
+</p>
 
-  <span class="hint">
-    Select multiple JPG, PNG or WebP images.
-  </span>
+<input
+id="multiPdfFiles"
+type="file"
+accept="image/jpeg,image/png,image/webp"
+multiple
+>
 
-  <button type="button" onclick="imagesToPdf()">
-    Create PDF
-  </button>
+<span class="hint">
+Select multiple JPG, PNG or WebP images.
+</span>
 
-  <div id="multiPdfResult" class="output"></div>
+<button
+type="button"
+onclick="imagesToPdf()"
+>
+
+Create PDF
+
+</button>
+
+<div
+id="multiPdfResult"
+class="output">
+</div>
 
 </div>
 
-<div class="card tool" data-key="image converter jpg png webp">
+
+<!-- IMAGE CONVERTER -->
+
+<div class="card tool"
+data-key="image converter jpg png webp">
+
 <div class="icon">🔄</div>
+
 <h3>Image Converter</h3>
-<p>Convert an image to JPG, PNG or WebP.</p>
-<input id="convf" type="file" accept="image/*">
+
+<p>
+Convert an image to JPG, PNG or WebP.
+</p>
+
+<input
+id="convf"
+type="file"
+accept="image/*"
+>
+
 <select id="fmt">
-<option value="image/jpeg">JPG</option>
-<option value="image/png">PNG</option>
-<option value="image/webp">WebP</option>
+
+<option value="image/jpeg">
+JPG
+</option>
+
+<option value="image/png">
+PNG
+</option>
+
+<option value="image/webp">
+WebP
+</option>
+
 </select>
-<button onclick="convert()">Convert & Download</button>
-<div id="convr" class="output"></div>
+
+<button onclick="convert()">
+Convert & Download
+</button>
+
+<div
+id="convr"
+class="output">
 </div>
 
-<div class="card tool" data-key="image resizer resize dimensions">
+</div>
+
+
+<!-- IMAGE RESIZER -->
+
+<div class="card tool"
+data-key="image resizer resize dimensions">
+
 <div class="icon">📐</div>
+
 <h3>Image Resizer</h3>
-<p>Resize an image to exact dimensions.</p>
-<input id="rf" type="file" accept="image/*">
+
+<p>
+Resize an image to exact dimensions.
+</p>
+
+<input
+id="rf"
+type="file"
+accept="image/*"
+>
+
 <div class="row">
-<input id="rw" type="number" placeholder="Width (px)">
-<input id="rh" type="number" placeholder="Height (px)">
+
+<input
+id="rw"
+type="number"
+placeholder="Width (px)"
+>
+
+<input
+id="rh"
+type="number"
+placeholder="Height (px)"
+>
+
 </div>
-<button onclick="resizeImg()">Resize & Download</button>
-<div id="rr" class="output"></div>
+
+<button onclick="resizeImg()">
+Resize & Download
+</button>
+
+<div
+id="rr"
+class="output">
 </div>
-<div class="card tool" data-key="image pdf">
+
+</div>
+
+
+<!-- IMAGE PDF -->
+
+<div class="card tool"
+data-key="image pdf">
+
 <div class="icon">📄</div>
+
 <h3>Image → PDF</h3>
-<p>Create a printable PDF using your browser's print dialog.</p>
-<input id="pf" type="file" accept="image/*">
-<button onclick="pdf()">Open PDF Print View</button>
-<span class="hint">Choose “Save as PDF”.</span>
+
+<p>
+Create a printable PDF using your browser's print dialog.
+</p>
+
+<input
+id="pf"
+type="file"
+accept="image/*"
+>
+
+<button onclick="pdf()">
+Open PDF Print View
+</button>
+
+<span class="hint">
+Choose “Save as PDF”.
+</span>
+
 </div>
 
-<div class="card tool" data-key="qr code generator url text">
+
+<!-- QR -->
+
+<div class="card tool"
+data-key="qr code generator url text">
+
 <div class="icon">🔗</div>
+
 <h3>QR Code Generator</h3>
-<p>Create a QR code for a URL or text.</p>
-<input id="qt" placeholder="https://example.com or any text">
-<button onclick="qr()">Generate QR</button>
-<div id="qb" class="output" style="text-align:center"></div>
-<button class="secondary" onclick="qrDownload()">Download QR</button>
+
+<p>
+Create a QR code for a URL or text.
+</p>
+
+<input
+id="qt"
+placeholder="https://example.com or any text"
+>
+
+<button onclick="qr()">
+Generate QR
+</button>
+
+<div
+id="qb"
+class="output"
+style="text-align:center">
 </div>
 
-<div class="card tool" data-key="percentage calculator maths">
+<button
+class="secondary"
+onclick="qrDownload()">
+
+Download QR
+
+</button>
+
+</div>
+
+
+<!-- PERCENTAGE -->
+
+<div class="card tool"
+data-key="percentage calculator maths">
+
 <div class="icon">％</div>
+
 <h3>Percentage Calculator</h3>
-<p>Calculate X% of Y.</p>
+
+<p>
+Calculate X% of Y.
+</p>
+
 <div class="row">
-<input id="pct" type="number" placeholder="Percentage">
-<input id="num" type="number" placeholder="Number">
-</div>
-<button onclick="percent()">Calculate</button>
-<div id="po" class="output"></div>
+
+<input
+id="pct"
+type="number"
+placeholder="Percentage"
+>
+
+<input
+id="num"
+type="number"
+placeholder="Number"
+>
+
 </div>
 
-<div class="card tool" data-key="cgpa percentage student">
+<button onclick="percent()">
+Calculate
+</button>
+
+<div
+id="po"
+class="output">
+</div>
+
+</div>
+
+
+<!-- CGPA -->
+
+<div class="card tool"
+data-key="cgpa percentage student">
+
 <div class="icon">🎓</div>
+
 <h3>CGPA → Percentage</h3>
-<p>Common CBSE-style conversion: CGPA × 9.5.</p>
-<input id="cg" type="number" step=".01" min="0" max="10" placeholder="Enter CGPA">
-<button onclick="cgpa()">Calculate</button>
-<div id="cgo" class="output"></div>
+
+<p>
+Common CBSE-style conversion: CGPA × 9.5.
+</p>
+
+<input
+id="cg"
+type="number"
+step=".01"
+min="0"
+max="10"
+placeholder="Enter CGPA"
+>
+
+<button onclick="cgpa()">
+Calculate
+</button>
+
+<div
+id="cgo"
+class="output">
 </div>
 
-<div class="card tool" data-key="age calculator birthday date">
+</div>
+
+
+<!-- AGE -->
+
+<div class="card tool"
+data-key="age calculator birthday date">
+
 <div class="icon">🎂</div>
+
 <h3>Age Calculator</h3>
-<p>Calculate age from date of birth.</p>
-<input id="dob" type="date">
-<button onclick="age()">Calculate Age</button>
-<div id="ao" class="output"></div>
+
+<p>
+Calculate age from date of birth.
+</p>
+
+<input
+id="dob"
+type="date"
+>
+
+<button onclick="age()">
+Calculate Age
+</button>
+
+<div
+id="ao"
+class="output">
 </div>
 
-<div class="card tool full" data-key="social media image resizer instagram reel story">
-<div class="icon">📱</div>
-<h3>Social Media Image Resizer</h3>
-<p>Quick presets for common social-media graphics.</p>
-<input id="sf" type="file" accept="image/*">
-<select id="ss">
-<option value="1080,1080">Square — 1080 × 1080</option>
-<option value="1080,1920">Story / Reel — 1080 × 1920</option>
-<option value="1200,675">Landscape — 1200 × 675</option>
-<option value="1080,1350">Portrait — 1080 × 1350</option>
-</select>
-<button onclick="social()">Resize & Download</button>
-<div id="so" class="output"></div>
 </div>
+
+
+<!-- SOCIAL MEDIA -->
+
+<div class="card tool full"
+data-key="social media image resizer instagram reel story">
+
+<div class="icon">📱</div>
+
+<h3>
+Social Media Image Resizer
+</h3>
+
+<p>
+Quick presets for common social-media graphics.
+</p>
+
+<input
+id="sf"
+type="file"
+accept="image/*"
+>
+
+<select id="ss">
+
+<option value="1080,1080">
+Square — 1080 × 1080
+</option>
+
+<option value="1080,1920">
+Story / Reel — 1080 × 1920
+</option>
+
+<option value="1200,675">
+Landscape — 1200 × 675
+</option>
+
+<option value="1080,1350">
+Portrait — 1080 × 1350
+</option>
+
+</select>
+
+<button onclick="social()">
+Resize & Download
+</button>
+
+<div
+id="so"
+class="output">
+</div>
+
+</div>
+
 
 </section>
 
 
-<div id="empty" class="empty">
+<div
+id="empty"
+class="empty">
+
 No tool found. Try another search.
+
 </div>
+
 
 </main>
 
+
 <footer>
-<div class="footer-brand">✦ Toolora</div>
-<div>Free browser tools • © 2026 Toolora</div>
+
+<div class="footer-brand">
+✦ Toolora
+</div>
+
+<div>
+Free browser tools • © 2026 Toolora
+</div>
+
 </footer>
+
 
 <script>
 
-const $=x=>document.getElementById(x);
 
-$("q").oninput=e=>
-$("qv").textContent=e.target.value+"%";
+/* =========================
+   BASIC HELPER
+========================= */
 
-$("search").oninput=e=>{
-let q=e.target.value.toLowerCase().trim(),n=0;
+const $ = id =>
+document.getElementById(id);
 
-document.querySelectorAll(".tool").forEach(c=>{
-let ok=!q||
-c.dataset.key.includes(q)||
-c.innerText.toLowerCase().includes(q);
 
-c.style.display=ok?"":"none";
+/* =========================
+   SEARCH
+========================= */
 
-if(ok)n++;
+$("search").oninput = function(){
+
+const query =
+this.value.toLowerCase().trim();
+
+let count = 0;
+
+document
+.querySelectorAll(".tool")
+.forEach(card => {
+
+const key =
+card.dataset.key.toLowerCase();
+
+const text =
+card.innerText.toLowerCase();
+
+const visible =
+!query ||
+key.includes(query) ||
+text.includes(query);
+
+card.style.display =
+visible ? "" : "none";
+
+if(visible){
+count++;
+}
+
 });
 
-$("empty").style.display=n?"none":"block";
+$("empty").style.display =
+count ? "none" : "block";
+
 };
 
-function img(f){
-return new Promise((res,rej)=>{
-if(!f)return rej(Error("Please select an image."));
 
-let u=URL.createObjectURL(f),
-i=new Image();
+/* =========================
+   QUALITY SLIDER
+========================= */
 
-i.onload=()=>{
-URL.revokeObjectURL(u);
-res(i)
+$("q").oninput = function(){
+
+$("qv").textContent =
+this.value + "%";
+
 };
 
-i.onerror=()=>rej(Error("Could not read image."));
-i.src=u;
-})
+
+/* =========================
+   IMAGE LOADER
+========================= */
+
+function img(file){
+
+return new Promise((resolve,reject)=>{
+
+if(!file){
+
+reject(
+new Error("Please select an image.")
+);
+
+return;
+
 }
 
-function blob(i,w,h,t,q){
-let c=document.createElement("canvas");
-c.width=w;
-c.height=h;
+const url =
+URL.createObjectURL(file);
 
-let x=c.getContext("2d");
+const image =
+new Image();
 
-if(t=="image/jpeg"){
-x.fillStyle="#fff";
-x.fillRect(0,0,w,h);
-}
+image.onload = function(){
 
-x.drawImage(i,0,0,w,h);
+URL.revokeObjectURL(url);
 
-return new Promise(r=>c.toBlob(r,t,q))
-}
+resolve(image);
 
-function dl(b,n){
-let a=document.createElement("a");
-a.href=URL.createObjectURL(b);
-a.download=n;
-a.click();
+};
 
-setTimeout(()=>{
-URL.revokeObjectURL(a.href)
-},1000)
-}
+image.onerror = function(){
 
+URL.revokeObjectURL(url);
 
+reject(
+new Error("Could not read image.")
+);
 
-      
-      "
-        quality
-      );
+};
 
-    if(blob.size <= targetBytes){
+image.src = url;
 
-      bestBlob = blob;
-      low = quality;
-
-    }else{
-
-      high = quality;
-
-    }
-
-  }
-
-  if(bestBlob){
-    return bestBlob;
-  }
-
-  return await makeCompressedBlob(
-    image,
-    0.05
-  );
-  }
-function setupCompressor(){
-
-  $("compressMode").onchange = function(){
-
-    const mode = this.value;
-
-    $("qualityBox").style.display =
-      mode === "quality" ? "block" : "none";
-
-    $("sizeBox").style.display =
-      mode === "size" ? "block" : "none";
-
-    $("cr").textContent = "";
-  };
+});
 
 }
 
 
-async function compress(){
+/* =========================
+   CANVAS TO BLOB
+========================= */
 
-  const result = $("cr");
-  const preview = $("cp");
-
-  try{
-
-    const file = $("cf").files[0];
-
-    if(!file){
-      throw new Error("Please select an image first.");
-    }
-
-    result.textContent = "Compressing...";
-
-    const image = await img(file);
-
-    const mode = $("compressMode").value;
-
-    let compressedBlob;
-
-    if(mode === "quality"){
-
-      const quality =
-        Number($("q").value) / 100;
-
-      compressedBlob =
-        await makeCompressedBlob(
-          image,
-          quality
-        );
-
-    }else{
-
-      const target =
-        Number($("targetSize").value);
-
-      if(!target || target <= 0){
-        throw new Error("Enter a valid target size.");
-      }
-
-      const unit = $("sizeUnit").value;
-
-      const targetBytes =
-        unit === "MB"
-          ? target * 1024 * 1024
-          : target * 1024;
-
-      compressedBlob =
-        await compressToTargetSize(
-          image,
-          targetBytes
-        );
-    }
-
-    if(!compressedBlob){
-      throw new Error("Compression failed.");
-    }
-
-    const previewUrl =
-      URL.createObjectURL(compressedBlob);
-
-    preview.src = previewUrl;
-    preview.hidden = false;
-
-    const originalBytes = file.size;
-    const newBytes = compressedBlob.size;
-
-    const savedPercent =
-      ((originalBytes - newBytes) /
-      originalBytes) * 100;
-
-    let resultHTML = `
-      <b>Compression complete! ✅</b><br><br>
-      Original: ${formatFileSize(originalBytes)}<br>
-      Compressed: ${formatFileSize(newBytes)}<br>
-      Saved: ${Math.max(0,savedPercent).toFixed(1)}%
-    `;
-
-    if(mode === "size"){
-
-      resultHTML += `
-        <br>
-        Target: ${$("targetSize").value}
-        ${$("sizeUnit").value}
-      `;
-
-    }else{
-
-      resultHTML += `
-        <br>
-        Quality: ${$("q").value}%
-      `;
-    }
-
-    result.innerHTML = resultHTML;
-
-    dl(
-      compressedBlob,
-      "toolora-compressed.jpg"
-    );
-
-  }catch(error){
-
-    result.textContent =
-      error.message || "Something went wrong.";
-
-  }
-
-}
-
-
-function makeCompressedBlob(image, quality){
-
-  return new Promise((resolve,reject)=>{
-
-    const canvas =
-      document.createElement("canvas");
-
-    canvas.width =
-      image.naturalWidth;
-
-    canvas.height =
-      image.naturalHeight;
-
-    const ctx =
-      canvas.getContext("2d");
-
-    ctx.fillStyle = "#ffffff";
-
-    ctx.fillRect(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-    ctx.drawImage(
-      image,
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-    canvas.toBlob(
-      blob => {
-
-        if(blob){
-          resolve(blob);
-        }else{
-          reject(
-            new Error("Could not compress image.")
-          );
-        }
-
-      },
-      "image/jpeg",
-      quality
-    );
-
-  });
-
-}
-
-
-async function compressToTargetSize(
-  image,
-  targetBytes
+function blob(
+image,
+width,
+height,
+type,
+quality
 ){
 
-  let low = 0.05;
-  let high = 0.95;
-  let bestBlob = null;
+return new Promise((resolve,reject)=>{
 
-  for(let i = 0; i < 12; i++){
+const canvas =
+document.createElement("canvas");
 
-    const quality =
-      (low + high) / 2;
+canvas.width = width;
+canvas.height = height;
 
-    const testBlob =
-      await makeCompressedBlob(
-        image,
-        quality
-      );
+const ctx =
+canvas.getContext("2d");
 
-    if(testBlob.size <= targetBytes){
+if(!ctx){
 
-      bestBlob = testBlob;
-      low = quality;
+reject(
+new Error("Canvas is not supported.")
+);
 
-    }else{
+return;
 
-      high = quality;
-
-    }
-  }
-
-  if(bestBlob){
-    return bestBlob;
-  }
-
-  return await makeCompressedBlob(
-    image,
-    0.05
-  );
 }
 
+
+/* White background for JPG */
+
+if(type === "image/jpeg"){
+
+ctx.fillStyle = "#ffffff";
+
+ctx.fillRect(
+0,
+0,
+width,
+height
+);
+
+}
+
+ctx.drawImage(
+image,
+0,
+0,
+width,
+height
+);
+
+canvas.toBlob(
+result => {
+
+if(result){
+resolve(result);
+}else{
+reject(
+new Error("Could not create image.")
+);
+}
+
+},
+type,
+quality
+);
+
+});
+
+}
+
+
+/* =========================
+   DOWNLOAD FUNCTION
+========================= */
+
+function dl(blobData, filename){
+
+if(!blobData){
+
+throw new Error(
+"Nothing to download."
+);
+
+}
+
+const url =
+URL.createObjectURL(blobData);
+
+const link =
+document.createElement("a");
+
+link.href = url;
+link.download = filename;
+link.style.display = "none";
+
+document.body.appendChild(link);
+
+link.click();
+
+setTimeout(()=>{
+
+document.body.removeChild(link);
+
+URL.revokeObjectURL(url);
+
+},1500);
+
+}
+
+
+/* =========================
+   FORMAT FILE SIZE
+========================= */
 
 function formatFileSize(bytes){
 
-  if(bytes < 1024){
+if(bytes < 1024){
 
-    return bytes.toFixed(0) + " B";
+return bytes.toFixed(0) + " B";
 
-  }
+}
 
-  if(bytes < 1024 * 1024){
+if(bytes < 1024 * 1024){
 
-    return (
-      bytes / 1024
-    ).toFixed(1) + " KB";
+return (
+bytes / 1024
+).toFixed(1) + " KB";
 
-  }
+}
 
-  return (
-    bytes / (1024 * 1024)
-  ).toFixed(2) + " MB";
+return (
+bytes / (1024 * 1024)
+).toFixed(2) + " MB";
+
 }
 
 
+/* =========================
+   COMPRESSED JPEG
+========================= */
+
+function makeCompressedBlob(
+image,
+quality
+){
+
+return new Promise((resolve,reject)=>{
+
+const canvas =
+document.createElement("canvas");
+
+canvas.width =
+image.naturalWidth;
+
+canvas.height =
+image.naturalHeight;
+
+const ctx =
+canvas.getContext("2d");
+
+if(!ctx){
+
+reject(
+new Error("Canvas is not supported.")
+);
+
+return;
+
+}
+
+
+/* White background */
+
+ctx.fillStyle = "#ffffff";
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.drawImage(
+image,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+canvas.toBlob(
+result => {
+
+if(result){
+
+resolve(result);
+
+}else{
+
+reject(
+new Error(
+"Could not compress image."
+)
+);
+
+}
+
+},
+"image/jpeg",
+quality
+);
+
+});
+
+}
+
+
+/* =========================
+   TARGET SIZE COMPRESSOR
+========================= */
+
+async function compressToTargetSize(
+image,
+targetBytes
+){
+
+let low = 0.05;
+
+let high = 0.95;
+
+let bestBlob = null;
+
+
+/*
+Try different JPEG qualities.
+Higher quality = larger file.
+*/
+
+for(
+let i = 0;
+i < 14;
+i++
+){
+
+const quality =
+(low + high) / 2;
+
+const testBlob =
+await makeCompressedBlob(
+image,
+quality
+);
+
+if(
+testBlob.size <= targetBytes
+){
+
+bestBlob = testBlob;
+
+low = quality;
+
+}else{
+
+high = quality;
+
+}
+
+}
+
+
+/* Target achieved */
+
+if(bestBlob){
+
+return bestBlob;
+
+}
+
+
+/*
+If target is extremely small,
+return the smallest practical version.
+*/
+
+return await makeCompressedBlob(
+image,
+0.05
+);
+
+}
+
+
+/* =========================
+   COMPRESSOR SETUP
+========================= */
+
+function setupCompressor(){
+
+$("compressMode").onchange =
+function(){
+
+const mode =
+this.value;
+
+$("qualityBox").style.display =
+mode === "quality"
+? "block"
+: "none";
+
+$("sizeBox").style.display =
+mode === "size"
+? "block"
+: "none";
+
+$("cr").textContent = "";
+
+};
+
+}
+
+
+/* =========================
+   IMAGE COMPRESSOR
+========================= */
+
+async function compress(){
+
+const result =
+$("cr");
+
+const preview =
+$("cp");
+
+try{
+
+const file =
+$("cf").files[0];
+
+if(!file){
+
+throw new Error(
+"Please select an image first."
+);
+
+}
+
+result.textContent =
+"Compressing...";
+
+const image =
+await img(file);
+
+const mode =
+$("compressMode").value;
+
+let compressedBlob;
+
+
+/* QUALITY MODE */
+
+if(mode === "quality"){
+
+const quality =
+Number($("q").value) / 100;
+
+compressedBlob =
+await makeCompressedBlob(
+image,
+quality
+);
+
+}
+
+
+/* TARGET SIZE MODE */
+
+else{
+
+const target =
+Number(
+$("targetSize").value
+);
+
+if(
+!target ||
+target <= 0
+){
+
+throw new Error(
+"Enter a valid target size."
+);
+
+}
+
+const unit =
+$("sizeUnit").value;
+
+const targetBytes =
+unit === "MB"
+? target * 1024 * 1024
+: target * 1024;
+
+compressedBlob =
+await compressToTargetSize(
+image,
+targetBytes
+);
+
+}
+
+
+/* CHECK */
+
+if(!compressedBlob){
+
+throw new Error(
+"Compression failed."
+);
+
+}
+
+
+/* PREVIEW */
+
+const previewUrl =
+URL.createObjectURL(
+compressedBlob
+);
+
+preview.src =
+previewUrl;
+
+preview.hidden = false;
+
+
+/* FILE SIZE */
+
+const originalBytes =
+file.size;
+
+const newBytes =
+compressedBlob.size;
+
+const saved =
+(
+(originalBytes - newBytes)
+/
+originalBytes
+) * 100;
+
+
+/* RESULT */
+
+let html = `
+
+<b>Compression complete! ✅</b>
+<br><br>
+
+Original:
+${formatFileSize(originalBytes)}
+
+<br>
+
+Compressed:
+${formatFileSize(newBytes)}
+
+<br>
+
+Saved:
+${Math.max(0,saved).toFixed(1)}%
+
+`;
+
+
+if(mode === "size"){
+
+html += `
+
+<br>
+
+Target:
+${$("targetSize").value}
+${$("sizeUnit").value}
+
+`;
+
+if(
+newBytes >
+(
+$("sizeUnit").value === "MB"
+? Number($("targetSize").value) * 1024 * 1024
+: Number($("targetSize").value) * 1024
+)
+){
+
+html += `
+
+<br>
+⚠️ This image cannot be compressed
+to the exact target size without
+reducing quality further.
+
+`;
+
+}
+
+}else{
+
+html += `
+
+<br>
+
+Quality:
+${$("q").value}%
+
+`;
+
+}
+
+
+result.innerHTML = html;
+
+
+/* DOWNLOAD */
+
+dl(
+compressedBlob,
+"toolora-compressed.jpg"
+);
+
+
+}catch(error){
+
+result.textContent =
+error.message ||
+"Something went wrong.";
+
+}
+
+}
+
+
+/* Start compressor */
+
 setupCompressor();
-  
+
+
+/* =========================
+   IMAGE CONVERTER
+========================= */
+
 async function convert(){
 
 try{
 
-let f=$("convf").files[0],
-t=$("fmt").value,
-i=await img(f),
+const file =
+$("convf").files[0];
 
-ex={
+const type =
+$("fmt").value;
+
+const image =
+await img(file);
+
+const extension = {
+
 "image/jpeg":"jpg",
 "image/png":"png",
 "image/webp":"webp"
-}[t],
 
-b=await blob(
-i,
-i.naturalWidth,
-i.naturalHeight,
-t,
-t=="image/jpeg"?.92:undefined
+}[type];
+
+const quality =
+type === "image/jpeg"
+? 0.92
+: undefined;
+
+const output =
+await blob(
+image,
+image.naturalWidth,
+image.naturalHeight,
+type,
+quality
 );
 
-dl(b,"toolora-converted."+ex);
+dl(
+output,
+"toolora-converted." +
+extension
+);
 
-$("convr").textContent=
-`Done — ${(b.size/1024).toFixed(1)} KB`;
+$("convr").textContent =
+`Done — ${formatFileSize(output.size)}`;
 
-}catch(e){
-$("convr").textContent=e.message
+}catch(error){
+
+$("convr").textContent =
+error.message;
+
 }
 
 }
+
+
+/* =========================
+   IMAGE RESIZER
+========================= */
 
 async function resizeImg(){
 
 try{
 
-let f=$("rf").files[0],
-w=+$("rw").value,
-h=+$("rh").value;
+const file =
+$("rf").files[0];
 
-if(!w||!h)
-throw Error("Enter width and height.");
+const width =
+Number($("rw").value);
 
-let b=await blob(
-await img(f),
-w,
-h,
+const height =
+Number($("rh").value);
+
+if(!width || !height){
+
+throw new Error(
+"Enter width and height."
+);
+
+}
+
+const image =
+await img(file);
+
+const output =
+await blob(
+image,
+width,
+height,
 "image/png"
 );
 
-dl(b,"toolora-resized.png");
+dl(
+output,
+"toolora-resized.png"
+);
 
-$("rr").textContent=
-`Done — ${w} × ${h}px`;
+$("rr").textContent =
+`Done — ${width} × ${height}px`;
 
-}catch(e){
-$("rr").textContent=e.message
+}catch(error){
+
+$("rr").textContent =
+error.message;
+
 }
 
 }
+
+
+/* =========================
+   IMAGE → PDF PRINT
+========================= */
 
 function pdf(){
 
-let f=$("pf").files[0];
+const file =
+$("pf").files[0];
 
-if(!f)
-return alert("Please select an image.");
+if(!file){
 
-let u=URL.createObjectURL(f),
-w=window.open("","_blank");
+alert(
+"Please select an image."
+);
 
-if(!w)
-return alert("Please allow pop-ups.");
+return;
 
-w.document.write(`
+}
+
+const url =
+URL.createObjectURL(file);
+
+const newWindow =
+window.open(
+"",
+"_blank"
+);
+
+if(!newWindow){
+
+alert(
+"Please allow pop-ups for this website."
+);
+
+return;
+
+}
+
+newWindow.document.write(`
+
+<!doctype html>
+
 <html>
+
 <head>
-<title>Toolora PDF</title>
+
+<title>
+Toolora PDF
+</title>
+
 <style>
-@page{margin:0}
-body{margin:0;text-align:center}
-img{max-width:100%;max-height:100vh}
+
+@page{
+margin:0;
+}
+
+html,body{
+margin:0;
+padding:0;
+text-align:center;
+}
+
+img{
+max-width:100%;
+max-height:100vh;
+}
+
 </style>
+
 </head>
+
 <body>
-<img src="${u}" onload="setTimeout(()=>print(),300)">
+
+<img
+src="${url}"
+onload="setTimeout(function(){
+window.print();
+},300)"
+>
+
 </body>
+
 </html>
+
 `);
 
-w.document.close()
+newWindow.document.close();
+
 }
+
+
+/* =========================
+   QR GENERATOR
+========================= */
 
 function qr(){
 
-let t=$("qt").value.trim();
+const text =
+$("qt").value.trim();
 
-if(!t)
-return $("qb").textContent="Enter text or a URL.";
+if(!text){
 
-let i=document.createElement("img");
+$("qb").textContent =
+"Enter text or a URL.";
 
-i.id="qri";
-i.width=220;
-i.height=220;
+return;
 
-i.src=
-"https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="+
-encodeURIComponent(t);
-
-$("qb").innerHTML="";
-$("qb").append(i)
 }
 
-function qrDownload(){
+const image =
+document.createElement("img");
 
-let i=$("qri");
+image.id = "qri";
 
-if(!i)
-return alert("Generate a QR code first.");
+image.width = 220;
+image.height = 220;
 
-let a=document.createElement("a");
+image.alt = "Generated QR Code";
 
-a.href=i.src;
-a.download="toolora-qr.png";
-a.target="_blank";
-a.click()
+image.src =
+"https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
++
+encodeURIComponent(text);
+
+$("qb").innerHTML = "";
+
+$("qb").appendChild(image);
+
 }
+
+
+/* =========================
+   QR DOWNLOAD
+========================= */
+
+async function qrDownload(){
+
+const image =
+$("qri");
+
+if(!image){
+
+alert(
+"Generate a QR code first."
+);
+
+return;
+
+}
+
+try{
+
+const response =
+await fetch(image.src);
+
+if(!response.ok){
+
+throw new Error(
+"Could not download QR code."
+);
+
+}
+
+const qrBlob =
+await response.blob();
+
+dl(
+qrBlob,
+"toolora-qr.png"
+);
+
+}catch(error){
+
+/*
+Fallback:
+open QR image in new tab.
+*/
+
+window.open(
+image.src,
+"_blank"
+);
+
+}
+
+}
+
+
+/* =========================
+   PERCENTAGE
+========================= */
 
 function percent(){
 
-let p=+$("pct").value,
-n=+$("num").value;
+const p =
+Number($("pct").value);
 
-$("po").textContent=
-Number.isFinite(p)&&Number.isFinite(n)
-?`${p}% of ${n} = ${(p*n/100).toFixed(2)}`
-:"Enter valid numbers."
+const n =
+Number($("num").value);
+
+if(
+!Number.isFinite(p) ||
+!Number.isFinite(n)
+){
+
+$("po").textContent =
+"Enter valid numbers.";
+
+return;
+
 }
+
+$("po").textContent =
+`${p}% of ${n} = ${(p*n/100).toFixed(2)}`;
+
+}
+
+
+/* =========================
+   CGPA
+========================= */
 
 function cgpa(){
 
-let c=+$("cg").value;
+const value =
+Number($("cg").value);
 
-$("cgo").textContent=
-c>=0&&c<=10
-?`Approx. percentage = ${(c*9.5).toFixed(2)}%`
-:"Enter a CGPA from 0 to 10."
+if(
+!Number.isFinite(value) ||
+value < 0 ||
+value > 10
+){
+
+$("cgo").textContent =
+"Enter a CGPA from 0 to 10.";
+
+return;
+
 }
+
+$("cgo").textContent =
+`Approx. percentage = ${(value*9.5).toFixed(2)}%`;
+
+}
+
+
+/* =========================
+   AGE CALCULATOR
+========================= */
 
 function age(){
 
-let s=$("dob").value;
+const value =
+$("dob").value;
 
-if(!s)
-return $("ao").textContent="Select your date of birth.";
+if(!value){
 
-let d=new Date(s+"T00:00:00"),
-n=new Date();
+$("ao").textContent =
+"Select your date of birth.";
 
-if(d>n)
-return $("ao").textContent=
+return;
+
+}
+
+const dob =
+new Date(
+value + "T00:00:00"
+);
+
+const today =
+new Date();
+
+if(dob > today){
+
+$("ao").textContent =
 "Date of birth cannot be in the future.";
 
-let y=n.getFullYear()-d.getFullYear(),
-m=n.getMonth()-d.getMonth(),
-x=n.getDate()-d.getDate();
+return;
 
-if(x<0){
-m--;
-x+=new Date(
-n.getFullYear(),
-n.getMonth(),
+}
+
+let years =
+today.getFullYear() -
+dob.getFullYear();
+
+let months =
+today.getMonth() -
+dob.getMonth();
+
+let days =
+today.getDate() -
+dob.getDate();
+
+
+if(days < 0){
+
+months--;
+
+days +=
+new Date(
+today.getFullYear(),
+today.getMonth(),
 0
-).getDate()
+).getDate();
+
 }
 
-if(m<0){
-y--;
-m+=12
+
+if(months < 0){
+
+years--;
+
+months += 12;
+
 }
 
-$("ao").textContent=
-`Age: ${y} years, ${m} months, ${x} days`
+
+$("ao").textContent =
+`Age: ${years} years, ${months} months, ${days} days`;
+
 }
+
+
+/* =========================
+   SOCIAL MEDIA RESIZER
+========================= */
 
 async function social(){
 
 try{
 
-let f=$("sf").files[0],
-[w,h]=$("ss").value.split(",").map(Number),
-i=await img(f),
+const file =
+$("sf").files[0];
 
-c=document.createElement("canvas"),
-x=c.getContext("2d");
+const [
+width,
+height
+] =
+$("ss").value
+.split(",")
+.map(Number);
 
-c.width=w;
-c.height=h;
+const image =
+await img(file);
 
-let s=Math.max(
-w/i.naturalWidth,
-h/i.naturalHeight
-),
+const canvas =
+document.createElement("canvas");
 
-nw=i.naturalWidth*s,
-nh=i.naturalHeight*s;
+canvas.width =
+width;
 
-x.drawImage(
-i,
-(w-nw)/2,
-(h-nh)/2,
-nw,
-nh
+canvas.height =
+height;
+
+const ctx =
+canvas.getContext("2d");
+
+const scale =
+Math.max(
+width / image.naturalWidth,
+height / image.naturalHeight
 );
 
-let b=await new Promise(
-r=>c.toBlob(r,"image/jpeg",.92)
+const newWidth =
+image.naturalWidth * scale;
+
+const newHeight =
+image.naturalHeight * scale;
+
+ctx.drawImage(
+image,
+(width - newWidth) / 2,
+(height - newHeight) / 2,
+newWidth,
+newHeight
 );
 
-dl(b,`toolora-${w}x${h}.jpg`);
+const output =
+await new Promise(
+resolve =>
+canvas.toBlob(
+resolve,
+"image/jpeg",
+0.92
+)
+);
 
-$("so").textContent=
-`Done — ${w} × ${h}px`;
+dl(
+output,
+`toolora-${width}x${height}.jpg`
+);
 
-}catch(e){
-$("so").textContent=e.message
+$("so").textContent =
+`Done — ${width} × ${height}px`;
+
+}catch(error){
+
+$("so").textContent =
+error.message;
+
 }
 
 }
+
+
+/* =========================
+   WORD COUNTER
+========================= */
+
 function countText(){
 
-  const text = $("counterText").value;
+const text =
+$("counterText").value;
 
-  const words = text.trim()
-    ? text.trim().split(/\s+/).length
-    : 0;
+const words =
+text.trim()
+? text.trim().split(/\s+/).length
+: 0;
 
-  const characters = text.length;
+const characters =
+text.length;
 
-  const charactersNoSpaces =
-    text.replace(/\s/g,"").length;
+const charactersNoSpaces =
+text.replace(/\s/g,"").length;
 
-  const sentences = text.trim()
-    ? text.split(/[.!?]+/)
-        .filter(x => x.trim()).length
-    : 0;
+const sentences =
+text.trim()
+? text
+.split(/[.!?]+/)
+.filter(
+x => x.trim()
+).length
+: 0;
 
-  $("counterResult").innerHTML =
-    `Words: <b>${words}</b><br>
-     Characters: <b>${characters}</b><br>
-     Characters without spaces: <b>${charactersNoSpaces}</b><br>
-     Sentences: <b>${sentences}</b>`;
+$("counterResult").innerHTML = `
+
+Words:
+<b>${words}</b>
+
+<br>
+
+Characters:
+<b>${characters}</b>
+
+<br>
+
+Characters without spaces:
+<b>${charactersNoSpaces}</b>
+
+<br>
+
+Sentences:
+<b>${sentences}</b>
+
+`;
+
 }
 
+
+/* =========================
+   IMAGE CROPPER
+========================= */
 
 async function cropImage(){
 
-  try{
+try{
 
-    const f = $("cropFile").files[0];
+const file =
+$("cropFile").files[0];
 
-    const w = +$("cropW").value;
-    const h = +$("cropH").value;
+const width =
+Number($("cropW").value);
 
-    if(!w || !h)
-      throw Error("Enter crop width and height.");
+const height =
+Number($("cropH").value);
 
-    const i = await img(f);
+if(!width || !height){
 
-    const canvas = document.createElement("canvas");
+throw new Error(
+"Enter crop width and height."
+);
 
-    canvas.width = w;
-    canvas.height = h;
+}
 
-    const ctx = canvas.getContext("2d");
+const image =
+await img(file);
 
-    const scale = Math.max(
-      w / i.naturalWidth,
-      h / i.naturalHeight
-    );
+const canvas =
+document.createElement("canvas");
 
-    const nw = i.naturalWidth * scale;
-    const nh = i.naturalHeight * scale;
+canvas.width =
+width;
 
-    ctx.drawImage(
-      i,
-      (w - nw) / 2,
-      (h - nh) / 2,
-      nw,
-      nh
-    );
+canvas.height =
+height;
 
-    const b = await new Promise(resolve =>
-      canvas.toBlob(resolve,"image/jpeg",0.92)
-    );
+const ctx =
+canvas.getContext("2d");
 
-    dl(b,`toolora-cropped-${w}x${h}.jpg`);
+const scale =
+Math.max(
+width / image.naturalWidth,
+height / image.naturalHeight
+);
 
-    $("cropResult").textContent =
-      `Done — ${w} × ${h}px`;
+const newWidth =
+image.naturalWidth * scale;
 
-  }catch(e){
+const newHeight =
+image.naturalHeight * scale;
 
-    $("cropResult").textContent = e.message;
+ctx.drawImage(
+image,
+(width - newWidth) / 2,
+(height - newHeight) / 2,
+newWidth,
+newHeight
+);
 
-  }
+const output =
+await new Promise(
+resolve =>
+canvas.toBlob(
+resolve,
+"image/jpeg",
+0.92
+)
+);
 
-  }
-  async function imagesToPdf(){
+dl(
+output,
+`toolora-cropped-${width}x${height}.jpg`
+);
 
-  try{
+$("cropResult").textContent =
+`Done — ${width} × ${height}px`;
 
-    const files = Array.from($("multiPdfFiles").files);
+}catch(error){
 
-    if(!files.length){
-      throw Error("Please select at least one image.");
-    }
+$("cropResult").textContent =
+error.message;
 
-    if(!window.jspdf){
-      throw Error("PDF library is still loading. Please refresh the page and try again.");
-    }
+}
 
-    const { jsPDF } = window.jspdf;
+}
 
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "mm",
-      format: "a4"
-    });
 
-    for(let index = 0; index < files.length; index++){
+/* =========================
+   MULTIPLE IMAGES → PDF
+========================= */
 
-      const file = files[index];
-      const image = await img(file);
+async function imagesToPdf(){
 
-      if(index > 0){
-        pdf.addPage();
-      }
+try{
 
-      const pageW = 210;
-      const pageH = 297;
-      const margin = 10;
+const files =
+Array.from(
+$("multiPdfFiles").files
+);
 
-      const maxW = pageW - margin * 2;
-      const maxH = pageH - margin * 2;
+if(!files.length){
 
-      const scale = Math.min(
-        maxW / image.naturalWidth,
-        maxH / image.naturalHeight
-      );
+throw new Error(
+"Please select at least one image."
+);
 
-      const w = image.naturalWidth * scale;
-      const h = image.naturalHeight * scale;
+}
 
-      const canvas = document.createElement("canvas");
-      canvas.width = image.naturalWidth;
-      canvas.height = image.naturalHeight;
 
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(image,0,0);
+/* Check PDF library */
 
-      const imageData = canvas.toDataURL("image/jpeg",0.92);
+if(
+!window.jspdf ||
+!window.jspdf.jsPDF
+){
 
-      pdf.addImage(
-        imageData,
-        "JPEG",
-        (pageW-w)/2,
-        (pageH-h)/2,
-        w,
-        h
-      );
-    }
+throw new Error(
+"PDF library is still loading. Please refresh the page and try again."
+);
 
-    pdf.save("toolora-images.pdf");
+}
 
-    $("multiPdfResult").textContent =
-      `${files.length} image(s) added — PDF created successfully.`;
+const {
+jsPDF
+} = window.jspdf;
 
-  }catch(e){
 
-    $("multiPdfResult").textContent =
-      "Error: " + e.message;
+const pdf =
+new jsPDF({
 
-  }
+orientation:"portrait",
 
-  }
+unit:"mm",
+
+format:"a4"
+
+});
+
+
+for(
+let index = 0;
+index < files.length;
+index++
+){
+
+const image =
+await img(
+files[index]
+);
+
+
+if(index > 0){
+
+pdf.addPage();
+
+}
+
+
+const pageWidth = 210;
+const pageHeight = 297;
+
+const margin = 10;
+
+const maxWidth =
+pageWidth -
+margin * 2;
+
+const maxHeight =
+pageHeight -
+margin * 2;
+
+
+const scale =
+Math.min(
+maxWidth / image.naturalWidth,
+maxHeight / image.naturalHeight
+);
+
+const width =
+image.naturalWidth * scale;
+
+const height =
+image.naturalHeight * scale;
+
+
+/* Canvas */
+
+const canvas =
+document.createElement("canvas");
+
+canvas.width =
+image.naturalWidth;
+
+canvas.height =
+image.naturalHeight;
+
+const ctx =
+canvas.getContext("2d");
+
+
+/* White background */
+
+ctx.fillStyle =
+"#ffffff";
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.drawImage(
+image,
+0,
+0
+);
+
+
+const imageData =
+canvas.toDataURL(
+"image/jpeg",
+0.92
+);
+
+
+pdf.addImage(
+imageData,
+"JPEG",
+(pageWidth - width) / 2,
+(pageHeight - height) / 2,
+width,
+height
+);
+
+}
+
+
+pdf.save(
+"toolora-images.pdf"
+);
+
+
+$("multiPdfResult").textContent =
+`${files.length} image(s) added — PDF created successfully.`;
+
+}catch(error){
+
+$("multiPdfResult").textContent =
+"Error: " + error.message;
+
+}
+
+}
+
 </script>
 
+
 </body>
-</html>
+
+  </html>
